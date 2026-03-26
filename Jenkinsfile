@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/your-username/mlops-jenkins-project.git'
+                git 'https://github.com/unaidabdullah-ui/mlops-jenkins-project.git'
             }
         }
 
