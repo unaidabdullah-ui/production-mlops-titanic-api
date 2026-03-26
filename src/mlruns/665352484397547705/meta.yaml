@@ -1,6 +1,0 @@
-artifact_location: file:///home/unaid/mlops-jenkins-project/src/mlruns/665352484397547705
-creation_time: 1774552029060
-experiment_id: '665352484397547705'
-last_update_time: 1774552029060
-lifecycle_stage: active
-name: Titanic Survival Prediction
