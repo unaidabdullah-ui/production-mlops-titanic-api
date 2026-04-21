@@ -1,60 +1,68 @@
-# 🚢 Titanic Survival Prediction API (Production-Ready MLOps Project)
+# 🚢 Titanic Survival Prediction API – Production-Ready MLOps Project
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
 ![Docker](https://img.shields.io/badge/Docker-Container-blue)
 ![Jenkins](https://img.shields.io/badge/Jenkins-CI/CD-red)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-
-A **production-grade Machine Learning API** built using **FastAPI, Docker, and Jenkins CI/CD**, designed to simulate real-world MLOps workflows.
+![MLflow](https://img.shields.io/badge/MLflow-Tracking-orange)
 
 ---
 
-## 🚀 Project Overview
+## 📌 Overview
 
-This project predicts whether a passenger survived the Titanic disaster using a trained ML model.
+This project is a **production-grade MLOps pipeline** that predicts Titanic passenger survival using Machine Learning.
 
-It demonstrates:
+It simulates a **real-world ML system** including:
 
-* End-to-end ML pipeline
-* API deployment
-* Containerization
-* CI/CD automation using Jenkins
+* Model training & evaluation
+* Experiment tracking (MLflow)
+* Data drift detection (Evidently)
+* API deployment (FastAPI)
+* Containerization (Docker)
+* CI/CD automation (Jenkins)
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ System Architecture
 
 ```
-User → FastAPI → ML Model → Prediction
-            ↓
-        Docker Container
-            ↓
-        Jenkins Pipeline (CI/CD)
+User Request
+     ↓
+FastAPI Service
+     ↓
+ML Model (RandomForest)
+     ↓
+Prediction Response
+
+CI/CD Flow:
+GitHub → Jenkins → Train → Evaluate → Docker Build → Deploy
 ```
 
 ---
 
 ## ⚡ Features
 
-* ⚡ FastAPI REST API
-* 🧠 ML model (RandomForest)
-* 🐳 Dockerized application
-* 🔁 Jenkins CI/CD pipeline
-* 📊 Swagger UI (`/docs`)
-* 📦 Clean modular structure
+* 🚀 FastAPI REST API
+* 🧠 RandomForest ML Model
+* 📊 MLflow Experiment Tracking
+* 📉 Data Drift Detection (Evidently)
+* 🔁 Automated CI/CD Pipeline (Jenkins)
+* 🐳 Dockerized Deployment
+* 📄 Interactive API Docs (/docs)
 
 ---
 
 ## 🛠️ Tech Stack
 
-* Python
-* FastAPI
-* Scikit-learn
-* Pandas
-* Docker
-* Jenkins
-* Uvicorn
+| Category   | Tools Used   |
+| ---------- | ------------ |
+| Language   | Python       |
+| API        | FastAPI      |
+| ML         | Scikit-learn |
+| Tracking   | MLflow       |
+| Monitoring | Evidently    |
+| CI/CD      | Jenkins      |
+| Container  | Docker       |
 
 ---
 
@@ -65,11 +73,14 @@ mlops-jenkins-project/
 │
 ├── api/                
 ├── src/                
-├── model/            
-├── monitoring/         
-├── Jenkinsfile        
+├── monitoring/       
+├── utils/              
+├── model/              
+│
 ├── Dockerfile
-└── requirements.txt
+├── Jenkinsfile
+├── requirements.txt
+└── README.md
 ```
 
 ---
@@ -77,13 +88,15 @@ mlops-jenkins-project/
 ## ⚙️ Local Setup
 
 ```bash
-git clone https://github.com/your-username/mlops-jenkins-project.git
+git clone https://github.com/unaidabdullah-ui/mlops-jenkins-project.git
 cd mlops-jenkins-project
 
-python3 -m venv venv
-source venv/bin/activate
+python -m venv venv
+source venv/bin/activate   # (Linux/Mac)
+venv\Scripts\activate      # (Windows)
 
 pip install -r requirements.txt
+
 python src/train.py
 
 uvicorn api.app:app --reload
@@ -100,7 +113,7 @@ docker run -p 8000:8000 mlops-app
 
 ---
 
-## 🌐 API Endpoints
+## 🌐 API Usage
 
 ### Base URL
 
@@ -114,13 +127,11 @@ http://localhost:8000
 http://localhost:8000/docs
 ```
 
----
+### Prediction Endpoint
 
-## 🔮 Prediction API
+**POST /predict**
 
-### POST `/predict`
-
-### Example Input:
+#### Input:
 
 ```json
 {
@@ -136,7 +147,7 @@ http://localhost:8000/docs
 }
 ```
 
-### Response:
+#### Output:
 
 ```json
 {
@@ -150,23 +161,24 @@ http://localhost:8000/docs
 
 Pipeline stages:
 
-1. Code Pull from GitHub
+1. Clone Repository
 2. Install Dependencies
 3. Train Model
-4. Build Docker Image
-5. Run Container
-
-👉 Fully automated deployment using Jenkinsfile
+4. Evaluate Model
+5. Conditional Retraining
+6. Data Drift Detection
+7. Docker Build
+8. Deploy Container
 
 ---
 
-## 📈 Future Improvements
+## 📈 Future Enhancements
 
-* Add MLflow tracking
-* Add model versioning
-* Add monitoring (Prometheus/Grafana)
-* Deploy on AWS EC2
-* Add prediction probabilities
+* ✅ Model versioning
+* 📊 Prometheus + Grafana monitoring
+* ☁️ AWS EC2 deployment
+* 🔄 CI/CD via GitHub Actions
+* 🎯 Probability predictions
 
 ---
 
@@ -176,6 +188,6 @@ Pipeline stages:
 
 ---
 
-## ⭐ Support
+## ⭐ Show Your Support
 
-If you found this useful, give it a ⭐ and share 🚀
+If you found this project helpful, consider giving it a ⭐
