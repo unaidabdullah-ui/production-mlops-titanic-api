@@ -63,11 +63,11 @@ User → FastAPI → ML Model → Prediction
 ```
 mlops-jenkins-project/
 │
-├── api/                # FastAPI app
-├── src/                # Training pipeline
-├── model/              # Saved ML model
-├── monitoring/         # (future use)
-├── Jenkinsfile         # CI/CD pipeline
+├── api/                
+├── src/                
+├── model/            
+├── monitoring/         
+├── Jenkinsfile        
 ├── Dockerfile
 └── requirements.txt
 ```
