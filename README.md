@@ -1,28 +1,59 @@
-# 🚢 Titanic Survival Prediction API (MLOps Project)
+# 🚢 Titanic Survival Prediction API (Production-Ready MLOps Project)
 
-A production-ready **Machine Learning API** built using **FastAPI, Docker, and Scikit-learn** to predict whether a passenger would survive the Titanic disaster.
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
+![Docker](https://img.shields.io/badge/Docker-Container-blue)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI/CD-red)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+A **production-grade Machine Learning API** built using **FastAPI, Docker, and Jenkins CI/CD**, designed to simulate real-world MLOps workflows.
 
 ---
 
-## 🚀 Features
+## 🚀 Project Overview
 
-* ⚡ FastAPI-based REST API
-* 🧠 Machine Learning model (Scikit-learn)
-* 🐳 Dockerized for easy deployment
-* 📊 End-to-End ML pipeline (training → prediction)
-* 🔍 Swagger UI for testing (`/docs`)
-* 📦 Clean project structure
+This project predicts whether a passenger survived the Titanic disaster using a trained ML model.
+
+It demonstrates:
+
+* End-to-end ML pipeline
+* API deployment
+* Containerization
+* CI/CD automation using Jenkins
+
+---
+
+## 🏗️ Architecture
+
+```
+User → FastAPI → ML Model → Prediction
+            ↓
+        Docker Container
+            ↓
+        Jenkins Pipeline (CI/CD)
+```
+
+---
+
+## ⚡ Features
+
+* ⚡ FastAPI REST API
+* 🧠 ML model (RandomForest)
+* 🐳 Dockerized application
+* 🔁 Jenkins CI/CD pipeline
+* 📊 Swagger UI (`/docs`)
+* 📦 Clean modular structure
 
 ---
 
 ## 🛠️ Tech Stack
 
-* Python 3.10+
+* Python
 * FastAPI
 * Scikit-learn
 * Pandas
-* Joblib
 * Docker
+* Jenkins
 * Uvicorn
 
 ---
@@ -32,53 +63,29 @@ A production-ready **Machine Learning API** built using **FastAPI, Docker, and S
 ```
 mlops-jenkins-project/
 │
-├── api/
-│   └── app.py              # FastAPI application
-│
-├── src/
-│   └── train.py            # Model training script
-│
-├── model/
-│   └── model.pkl           # Trained model
-│
+├── api/                # FastAPI app
+├── src/                # Training pipeline
+├── model/              # Saved ML model
+├── monitoring/         # (future use)
+├── Jenkinsfile         # CI/CD pipeline
 ├── Dockerfile
-├── requirements.txt
-└── README.md
+└── requirements.txt
 ```
 
 ---
 
-## ⚙️ Installation (Local Setup)
-
-### 1️⃣ Clone the repository
+## ⚙️ Local Setup
 
 ```bash
 git clone https://github.com/your-username/mlops-jenkins-project.git
 cd mlops-jenkins-project
-```
 
-### 2️⃣ Create virtual environment
-
-```bash
 python3 -m venv venv
 source venv/bin/activate
-```
 
-### 3️⃣ Install dependencies
-
-```bash
 pip install -r requirements.txt
-```
-
-### 4️⃣ Run training
-
-```bash
 python src/train.py
-```
 
-### 5️⃣ Run API
-
-```bash
 uvicorn api.app:app --reload
 ```
 
@@ -86,21 +93,14 @@ uvicorn api.app:app --reload
 
 ## 🐳 Run with Docker
 
-### Build image
-
 ```bash
 docker build -t mlops-app .
-```
-
-### Run container
-
-```bash
 docker run -p 8000:8000 mlops-app
 ```
 
 ---
 
-## 🌐 API Usage
+## 🌐 API Endpoints
 
 ### Base URL
 
@@ -116,11 +116,11 @@ http://localhost:8000/docs
 
 ---
 
-## 🔮 Prediction Endpoint
+## 🔮 Prediction API
 
 ### POST `/predict`
 
-### Example Request
+### Example Input:
 
 ```json
 {
@@ -136,7 +136,7 @@ http://localhost:8000/docs
 }
 ```
 
-### Example Response
+### Response:
 
 ```json
 {
@@ -144,36 +144,29 @@ http://localhost:8000/docs
 }
 ```
 
-* `0` → Did not survive
-* `1` → Survived
+---
+
+## 🔁 CI/CD Pipeline (Jenkins)
+
+Pipeline stages:
+
+1. Code Pull from GitHub
+2. Install Dependencies
+3. Train Model
+4. Build Docker Image
+5. Run Container
+
+👉 Fully automated deployment using Jenkinsfile
 
 ---
 
-## 🧠 ML Pipeline
+## 📈 Future Improvements
 
-1. Data preprocessing
-2. Feature engineering (encoding, cleaning)
-3. Model training (RandomForestClassifier)
-4. Model saving using Joblib
-5. API serving predictions
-
----
-
-## ⚠️ Important Notes
-
-* Input must match **trained feature format**
-* Model expects **preprocessed features**
-* Do NOT include `venv/` or large files in repo
-
----
-
-## 🚀 Future Improvements
-
-* ✅ Add full preprocessing pipeline (no manual encoding)
-* ✅ Add prediction probability (`predict_proba`)
-* ✅ Integrate MLflow for tracking
-* ✅ CI/CD with Jenkins / GitHub Actions
-* ✅ Deploy on AWS (EC2 / Docker)
+* Add MLflow tracking
+* Add model versioning
+* Add monitoring (Prometheus/Grafana)
+* Deploy on AWS EC2
+* Add prediction probabilities
 
 ---
 
@@ -183,6 +176,6 @@ http://localhost:8000/docs
 
 ---
 
-## ⭐ If you like this project
+## ⭐ Support
 
-Give it a ⭐ on GitHub and share it 🚀
+If you found this useful, give it a ⭐ and share 🚀
