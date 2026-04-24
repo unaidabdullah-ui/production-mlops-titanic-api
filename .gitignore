@@ -1,6 +1,7 @@
 venv/
-__pycache__/
-*.pyc
-.env
-model/
+data/
+*.csv
 *.pkl
+mlruns/
+__pycache__/
+.env
