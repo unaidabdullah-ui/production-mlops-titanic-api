@@ -75,7 +75,7 @@ mlops-jenkins-project/
 ├── src/                
 ├── monitoring/       
 ├── utils/              
-├── model/              
+├── models/              
 │
 ├── Dockerfile
 ├── Jenkinsfile
