@@ -22,6 +22,14 @@ It simulates a **real-world ML system** including:
 * CI/CD automation (Jenkins)
 
 ---
+Download dataset from Kaggle:
+https://www.kaggle.com/c/titanic/data
+
+Place it inside:
+data/titanic.csv
+---
+
+---
 
 ## 🏗️ System Architecture
 
